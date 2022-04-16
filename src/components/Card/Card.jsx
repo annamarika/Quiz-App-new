@@ -1,29 +1,48 @@
 import styled from 'styled-components'
-import CardQuestion from './CardQuestion';
 import CardAnswer from './CardAnswer';
 import CardTag from './CardTag';
 import Bookmark from './Bookmark';
+import { useEffect, useState } from "react";
+import questionFetch from "../Url/Fetch"
+
+
 
 
 export default function Card() {
 
+  const url =
+  "https://the-trivia-api.com/questions";
+  const [questionList, setQuestionList] = useState([]);
+
+  useEffect(() => {
+    questionFetch(url, setQuestionList);
+}, []);
+
     return (
-    <ContainerCard>
       <div>
-        <CardHeadline >Question</CardHeadline>
-        <div>
-          <Bookmark/>
-        </div>
-      </div>
-      <ContainerQuestion>
-      
-       <CardQuestion />
-      <CardAnswer />
+        {questionList.map(({id, question}) => {
+
+return (
+    <ContainerCard>
+<div>
+            <CardHeadline >Question</CardHeadline>
+            <div>
+              <Bookmark/>
+            </div>
+          </div>
+          <ContainerQuestion>
+          <p key={id}>{question}</p>
+        <CardAnswer />
         
-      </ContainerQuestion>
-      <CardTag/>
-        
-    </ContainerCard>
+        </ContainerQuestion>
+        <CardTag/>
+        </ContainerCard>
+          );
+        })}
+    );
+  
+    
+    </div>
 );
 }
 

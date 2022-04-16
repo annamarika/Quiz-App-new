@@ -1,6 +1,6 @@
-// import Url from '../Url/Url'
 
-import { useEffect, useState } from "react";
+
+/*import { useEffect, useState } from "react";
 import questionFetch from "../Url/Fetch"
 
 export default function CardQuestion() {
