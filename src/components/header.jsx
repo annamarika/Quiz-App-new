@@ -1,17 +1,16 @@
-import styled from 'styled-components'
+/* eslint-disable react/react-in-jsx-scope */
+import styled from "styled-components";
 
-export default function Header() { 
-return (
-    <ContainerHeader >
-        <Headline>QUIZ-APP</Headline>
-      </ContainerHeader>
-);
-
-
+export default function Header() {
+  return (
+    <ContainerHeader>
+      <Headline>QUIZ-APP</Headline>
+    </ContainerHeader>
+  );
 }
 
 const ContainerHeader = styled.header`
-width: 100vw;
+  width: 100vw;
   display: flex;
   flex-direction: column;
   padding: 1rem;
@@ -23,8 +22,8 @@ width: 100vw;
 `;
 
 const Headline = styled.h1`
-font-family: 'Courier Prime', monospace;
-display: flex;
+  font-family: "Courier Prime", monospace;
+  display: flex;
   justify-content: center;
   align-content: center;
 `;
