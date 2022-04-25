@@ -17,7 +17,12 @@ export default function Form({ currywurst }) {
         {/* Hier wird die Funktion für den Submit ausgeführt */}
         <FieldsetForm>
           <label htmlFor="question">question</label>
-          <input id="question" type="text" placeholder="Add your Question" />
+          <input
+            name="question"
+            id="question"
+            type="text"
+            placeholder="Add your Question"
+          />
         </FieldsetForm>
         <FieldsetForm>
           <label htmlFor="answer">answer</label>
